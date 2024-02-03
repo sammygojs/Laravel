@@ -19,5 +19,12 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     // return view('This is the about page');
-    echo "This is the about page";
+    // echo "This is the about page";
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    // return view('This is the about page');
+    // echo "This is the about page";
+    return view('contact');
 });
