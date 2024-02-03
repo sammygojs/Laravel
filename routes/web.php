@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Demo\DemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,14 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    // return view('This is the about page');
-    // echo "This is the about page";
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    // return view('This is the about page');
-    // echo "This is the about page";
-    return view('contact');
+Route::controller(DemoController::class)->group(function(){
+    Route::get('/about','Index');
+    Route::get('/contact','ContactMethod');
 });
